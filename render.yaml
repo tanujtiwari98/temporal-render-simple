@@ -12,7 +12,7 @@ databases:
 
 services:
 - type: pserv
-  name: temporal
+  name: temporal-all
   autoDeploy: false
   plan: Starter
   region: oregon
