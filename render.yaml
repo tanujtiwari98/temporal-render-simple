@@ -118,3 +118,17 @@ services:
       name: temporal-all
       type: pserv
       property: host
+- type: worker
+  repo: https://github.com/tanujtiwari98/livetrucks-backend
+  name: kafka-consumer-worker
+  plan: Starter
+  region: oregon
+  env: go
+  buildCommand: go build kafka_consumer/main.go
+  startCommand: ./main
+  envVars:
+    - key: TEMPORAL_CLUSTER_HOST
+      fromService:
+        name: temporal-all
+        type: pserv
+        property: host
