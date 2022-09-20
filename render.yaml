@@ -2,12 +2,10 @@ databases:
 - name: temporal-db
   databaseName: temporal
   user: temporal
-  plan: Starter
   region: oregon
 - name: temporal-db-visibility
   databaseName: visibility
   user: visibility
-  plan: Starter
   region: oregon
 
 services:
@@ -93,7 +91,6 @@ services:
 - type: web
   repo: https://github.com/tanujtiwari98/livetrucks-backend.git
   name: app-workflow-trigger
-  plan: Starter
   region: oregon
   env: go
   buildCommand: go build start/main.go
@@ -107,7 +104,6 @@ services:
 - type: worker
   repo: https://github.com/tanujtiwari98/livetrucks-backend
   name: app-worker
-  plan: Starter
   region: oregon
   env: go
   buildCommand: go build worker/main.go
